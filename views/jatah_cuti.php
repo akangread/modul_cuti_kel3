@@ -8,7 +8,7 @@ $list_cuti = $jatah->index();
 if (isset($_POST['type']) && $_POST['type'] === 'delete') {
     $row = $jatah->delete($_POST['id']);
     echo "<script>alert('Data tahun {$row['tahun']} berhasil dihapus')</script>";
-    echo "<script>window.location='?url=jatah-cuti'</script>";
+    echo "<script>window.location='?url=jatah_cuti'</script>";
 }
 ?>
 
