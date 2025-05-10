@@ -1,13 +1,16 @@
 <?php
 require_once('Controllers/Page.php');
 
-if (isset($_GET['url'])) {
-    $file = $_GET['url'];
-} else {
-    header("Location: ?url=periksa");
+$url = $_GET['url'] ?? 'landing';
+
+if ($url == 'login'){
+    require_once('Views/login.php');
+    exit();
+} else if ($url == 'landing'){
+    require_once('Views/landing.php');
     exit();
 }
 
-$title = strtoupper($file);
-$home = new Page("$title", "$file");
+$title = strtoupper($url);
+$home = new Page("$title", "$url");
 $home->call();
